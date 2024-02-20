@@ -1,0 +1,498 @@
+/* Global styles */
+:root {
+    --color-primary: #FFD700; /* Gold */
+    --color-secondary: #BDB76B; /* Dark Gold */
+    --color-tertiary: #8B7500; /* Light Gold */
+    --color-background: #F5F5F5; /* Light Background */
+    --color-text: #333333; /* Dark Text */
+    --color-link: #007BFF; /* Light Blue */
+    --color-link-hover: #0056B3; /* Dark Blue */
+    --color-button: #007BFF; /* Light Blue */
+    --color-button-hover: #0056B3; /* Dark Blue */
+    --color-footer: #212529; /* Dark */
+    --color-footer-text: #FFFFFF; /* White */
+}
+
+body {
+    margin:  0;
+    padding:  0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height:  100vh; /* Ensure the body takes up at least the full viewport height */
+}
+
+/* Header styles */
+.header {
+    width:  100%;
+    height:  10.2vh;
+    align-items: center;
+    position: fixed;
+    z-index:  10;
+    background-color: rgba(0, 0, 0, 0.5); /* Color amarillo con transparencia */
+    backdrop-filter: blur(20px);
+    color: var(--color-footer-text);
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width:  100%;
+    height:  100%;
+}
+
+.secciones {
+    margin:  0  30px;
+    padding:  0  10px;
+}
+
+.secciones a {
+    font-size:  18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main content styles */
+main {
+    width:   100%;
+    flex-grow:   1; /* This will make the main content area grow and push the footer down */
+}
+
+.portada {
+    position: relative;
+    height:  100vh; /* Asegúrate de que la altura sea suficiente para mostrar todo el contenido */
+    width:  100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover; /* Asegúrate de que las imágenes de fondo se adapten bien */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.overlay-content {
+    position: absolute;
+    top:  50%;
+    left:  50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* Color del texto para que sea legible sobre el fondo */
+    text-align: center;
+    max-width:  90%; /* Limita el ancho del contenido para que no sea demasiado ancho */
+}
+
+.imagenes {
+    position: absolute;
+    top:  0;
+    left:  0;
+    width:  100%;
+    height:  100%;
+    
+    z-index: -1; /* Asegúrate de que las imágenes estén detrás del contenido */
+}
+
+.imagenes img {
+    width:  100%;
+    height:  100%;
+    object-fit: cover; /* Asegúrate de que las imágenes cubran toda la portada */
+     /* Opacidad para que el contenido sea legible */
+    overflow: hidden;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.boton {
+    width:  15vw;
+    height:  5vh;
+    border-radius:  5px;
+    border:  1px solid #fff; /* Cambiado a blanco */
+    background-color: #fff; /* Cambiado a blanco */
+    color: #000; /* Cambiado a negro */
+    display: inline-block;
+    background-color: #7b38d8;
+    border: none;
+    border-radius:  10px;
+    color: #ffffff;
+    text-align: center;
+    padding:  12px  0;
+    width:  200px;
+    transition: all  0.5s;
+    cursor: pointer;
+    margin:  5px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .boton:hover {
+    background-color: #f7c2f9;
+  }
+
+/* Asegúrate de que los botones de navegación de la portada sean visibles y funcionales */
+.botones {
+    position: absolute;
+    bottom:  20px;
+    left:  50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:  100%;
+}
+
+.botones a {
+    display: inline-block;
+    width:  20px;
+    height:  10px;
+    margin:  0  5px;
+    background-color: #000000;
+    border-radius:  20px;
+    transition: background-color  0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.botones a:hover {
+    background-color: var(--color-link-hover); /* Cambia el color al pasar el mouse */
+}
+
+.boton {
+    width:  25%;
+    height:  2em;
+    border-radius:  5px;
+    border: none;
+    outline: none;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0,  88,  219,  0.5);
+    cursor: pointer;
+}
+
+.plan {
+    width:  100%;
+    height:  30%;
+    text-align: center;
+    margin:  60px  0  0  0;
+    padding:  20px  0;
+    
+    box-sizing: border-box;
+}
+
+.precios {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+}
+
+.pruebaGratis {
+    border:  1px solid black;
+    margin:  30px  50px;
+    width:  100%;
+    height:  55vh;
+    text-align: center;
+    opacity:  0;
+    transform: translateY(50px);
+    animation: none;
+    border-color: #CCCCCC;
+}
+
+.pruebaGratis.visible {
+    animation: fade-in-from-bottom  1s ease-out forwards;
+    opacity:  1;
+}
+
+.pruebaGratis:hover {
+    transform: translateY(-22px);
+    cursor: pointer;
+}
+
+.objetivos {
+  
+    display: flex;
+    width:  100%;
+    height:  100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacion {
+    width:  100%;
+    height:  69vh;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.informacion h2 {
+    font-size:  30px;
+    padding:  20px  0;
+}
+
+/* Footer styles */
+footer {
+    background: url("../adminitrador/imagenes/blurry-gradient-haikei\ \(4\).svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-footer-text);
+}
+
+.footer {
+    backdrop-filter: blur(20px);
+    background-color: var(--color-footer);
+    color: var(--color-footer-text);
+}
+
+.footer_title {
+    font-weight:  300;
+    font-size:  2rem;
+    margin-bottom:  30px;
+}
+
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:  1px solid #ffffff;
+    padding-bottom:  60px;
+}
+
+.nav--footer {
+    padding-bottom:  20px;
+    display: grid;
+    gap:  1em;
+    grid-auto-flow: row;
+    height:  100%;
+}
+
+.nav_link--footer {
+    display: flex;
+    margin:  0;
+    margin-right:  20px;
+    flex-wrap: wrap;
+}
+
+.nav_items{margin: 0 1em;}
+
+.footer_copy {
+    --padding-container:  30px  0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer_copyright {
+    font-weight:  300px;
+}
+
+.footer_icons {
+    margin-bottom:  10px;
+}
+
+.footer_img {
+    width:  30px;
+}
+
+/* Additional styles */
+.container {
+    width:  90%;
+    max-width:  1200px;
+    margin:  0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size:  50px;
+}
+
+.informacion p {
+    padding:  0  150px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body p {
+    font-size:  19px;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+}
+
+button {
+    background-color: var(--color-button);
+    color: var(--color-footer-text);
+    border: none;
+    outline: none;
+}
+
+button:hover {
+    background-color: var(--color-button-hover);
+}
+
+.footer_submit:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Knowledge section styles */
+.knowledge {
+    background-color: var(--color-footer);
+    background: url("../adminitrador/imagenes/blurry-gradient-haikei\ \(4\).svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-footer-text);
+    overflow: hidden;
+    padding:  30px;
+    box-sizing: border-box;
+}
+
+.knowledge_container {
+    display: grid;
+    grid-template-columns:  1fr  1fr;
+    align-items: center;
+}
+
+.knowledge_pinture {
+    max-width:  500px;
+}
+
+.knowledge_paragraph {
+    line-height:  1.7;
+    margin-bottom:  15px;
+}
+
+.knowledge_img {
+    width:  100%;
+    display: block;
+}
+
+
+.pruebaGratis {
+    background-color: #fff;
+    border-radius:  10px;
+    box-shadow:  0  4px  8px  0 rgba(0,0,0,0.2);
+    margin:  10px;
+    padding:  20px;
+    width:  300px;
+    text-align: center;
+    transition:  0.3s;
+}
+
+.pruebaGratis:hover {
+    box-shadow:  0  8px  16px  0 rgba(0,0,0,0.2);
+}
+
+.botonGratis {
+    background-color: #3d9bc0;
+    border: none;
+    color: white;
+    padding:  15px  32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:  16px;
+    margin:  4px  2px;
+    cursor: pointer;
+    transition-duration:  0.4s;
+}
+
+.botonGratis:hover {
+    background-color: #000;
+    color: white;
+}
+
+
+
+
+.boton {
+    width:  15vw;
+    height:  5vh;
+    border-radius:  5px;
+    border:  1px solid #fff; /* Cambiado a blanco */
+    background-color: #fff; /* Cambiado a blanco */
+    color: #000; /* Cambiado a negro */
+    display: inline-block;
+    background-color: #3d9bc0;
+    border: none;
+    border-radius:  10px;
+    color: #ffffff;
+    text-align: center;
+    padding:  12px  0;
+    width:  200px;
+    transition: all  0.5s;
+    cursor: pointer;
+    margin:  5px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+  a{   color: #ffffff;
+text-decoration: none;}
+  
+  .boton:hover {
+    background-color: #000;
+  }
+
+
+
+  .informacion button{ width:  15vw;
+    height:  5vh;
+    border-radius:  5px;
+
+ 
+    display: inline-block;
+    background-color: #3d9bc0;
+    border: none;
+    border-radius:  10px;
+    color: #ffffff;
+    text-align: center;
+    padding:  12px  0;
+    width:  200px;
+    transition: all  0.5s;
+    cursor: pointer;
+    margin:  5px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;}
+
+    .informacion button:hover {
+        background-color: #000;
+      }
+    
+
+
+      
+
+
+      .footer_social {
+        display: flex;
+        justify-content: space-between;
+        width:  150px;
+    }
+    
+    .footer_social a {
+        color: #fff;
+        text-decoration: none;
+        
+    }
+    
+    .footer_social img {
+        width:  50px;
+        height:  50px;
+    }
+    
+
+
+
+
